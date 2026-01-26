@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+
+body {
+  font-family: 'DM Sans', sans-serif;
+
+}
+
+@theme {
+  --color-BgCard: #18181b;
+  --color-InputBg: #27272a;
+  --color-BordaInput: #3f3f46;
+  --color-CardText: #71717a;
+  
+
+}
