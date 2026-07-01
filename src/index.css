@@ -14,3 +14,11 @@ body {
   
 
 }
+
+
+.layout {
+  width: min(95%, 1800px);
+
+  /* centraliza */
+  margin: 0 auto;
+}
