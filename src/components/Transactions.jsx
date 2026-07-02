@@ -1,6 +1,6 @@
 const Transactions = () => {
   return (
-    <div className="flex gap-5 flex-col bg-BgCard w-[95%] max-w-[1600px] mx-auto rounded-xl p-7">
+    <div className="flex gap-5 flex-col bg-BgCard w-[95%] max-w-[1600px] mx-auto rounded-xl p-7 my-7">
       <h2 className="text-md font-semibold ">Nova Transação</h2>
 
       <div  className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-5 gap-5">
