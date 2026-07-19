@@ -1,4 +1,28 @@
+import { useState } from "react";
+
+
 const Transactions = () => {
+  const [descricao, setDescricao] = useState("");
+  const [valor, setValor] = useState("");
+  const [categoria, setCategoria] = useState("Salário");
+  const [transactionType, setTransactionType] = useState("Receita");
+  const [transactions, setTransactions] = useState([]);
+
+  const adicionarTransacao = () => {
+    const novaTransacao = {
+      id: Date.now(),
+      descricao,
+      valor: parseFloat(valor),
+      categoria,
+      tipo: transactionType,
+    };
+
+    console.log("Nova transação adicionada:", novaTransacao);
+    setTransactions([...transactions, novaTransacao]);
+    setDescricao("");
+    setValor("");
+  };
+
   return (
     <div className="flex gap-5 flex-col bg-BgCard w-[95%] max-w-[1600px] mx-auto rounded-xl p-7 my-7">
       <h2 className="text-md font-semibold ">Nova Transação</h2>
@@ -7,7 +31,7 @@ const Transactions = () => {
         
         <div className="flex flex-col w-full mb-4 ">
           <label className="text-CardText font-medium ">Tipo</label>
-          <select className="h-10 mt-2 bg-InputBg rounded-lg p-2 pl-5 outline-none border border-BordaInput">
+          <select className="h-10 mt-2 bg-InputBg rounded-lg p-2 pl-5 outline-none border border-BordaInput" value={transactionType} onChange={(e) => setTransactionType(e.target.value)}>
             <option>Receita</option>
             <option>Despesa</option>
           </select>
@@ -15,8 +39,8 @@ const Transactions = () => {
 
         <div className="flex flex-col w-full mb-4">
           <label className="text-CardText font-medium ">Categoria</label>
-          <select className="h-10 mt-2 bg-InputBg rounded-lg p-2 pl-5 outline-none border border-BordaInput">
-            <option>Salario</option>
+          <select value={categoria} onChange={(e) => setCategoria(e.target.value)} className="h-10 mt-2 bg-InputBg rounded-lg p-2 pl-5 outline-none border border-BordaInput">
+            <option>Salário</option>
             <option>Freelancer</option>
             <option>Investimento</option>
             <option>Alimentação</option>
@@ -27,19 +51,22 @@ const Transactions = () => {
           </select>
         </div>
 
+
         <div className="flex flex-col w-full mb-4">
           <label className="text-CardText font-medium ">Descrição</label>
-          <input type="text" placeholder="Ex: Almoço" className="h-10 mt-2 bg-InputBg rounded-lg p-2 pl-5 outline-none border border-BordaInput"/>
+          <input type="text" placeholder="Ex: Almoço" value={descricao} onChange={(e) => setDescricao(e.target.value)} className="h-10 mt-2 bg-InputBg rounded-lg p-2 pl-5 outline-none border border-BordaInput"/>
         </div>
+
 
         <div className="flex flex-col w-full mb-4">
           <label className="text-CardText font-medium ">Valor</label>
-          <input type="number" step="0.01" placeholder="0,00" className="h-10 mt-2 bg-InputBg rounded-lg p-2 pl-5 outline-none border border-BordaInput"/>
+          <input type="number" step="0.01" placeholder="0,00" value={valor} onChange={(e) => setValor(e.target.value)} className="h-10 mt-2 bg-InputBg rounded-lg p-2 pl-5 outline-none border border-BordaInput"/>
         </div>
+
+
         <div className="flex flex-col w-full mb-4"> <label className="opacity-0 select-none"> botão </label>
-            <button className="h-10 mt-2 w-full bg-[#6366f1] text-white font-semibold rounded-lg border border-BordaInput hover:bg-blue-600 transition-colors"> Adicionar </button> 
-         </div>
-        
+            <button onClick={adicionarTransacao} className="h-10 mt-2 w-full bg-[#6366f1] text-white font-semibold rounded-lg border border-BordaInput hover:bg-blue-600 transition-colors"> Adicionar </button> 
+        </div>
       </div>
       
     </div>
