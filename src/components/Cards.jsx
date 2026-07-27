@@ -1,11 +1,27 @@
-const Cards = () => {
+const Cards = ( { transactions } ) => {
+  const receitas = transactions.reduce((acumulador, item) => {
+    if (item.tipo === "Receita") {
+      return acumulador + item.valor;
+    }
+    return acumulador;
+  }, 0);
+
+  const despesas = transactions.reduce((acumulador, item) => {
+    if (item.tipo === "Despesa") {
+      return acumulador + item.valor;
+    }
+    return acumulador;
+  }, 0);
+
+  const saldo = receitas - despesas;
+
   return (
     <div className="w-[95%] max-w-[1600px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-5">
-      {/* Card 1 */}
+      {/* Card 1 soma total */}
       <div className="w-full h-33 p-7 bg-BgCard rounded-xl flex justify-between hover:-translate-y-0.5 hover:shadow-lg transition-all duration-200">
         <div>
           <label className="text-CardText font-medium ">Saldo total</label>
-          <h2 className="text-3xl font-bold mt-5">R$ 0,00</h2>
+          <h2 className="text-3xl font-bold mt-5">R$ {saldo.toFixed(2)}</h2>
         </div>
         
         <div className="flex items-center justify-center w-10 h-10 bg-InputBg rounded-lg">
@@ -15,11 +31,11 @@ const Cards = () => {
       </div>
 
 
-      {/* Card 2 */}
+      {/* Card 2 receitas */}
       <div className="w-full h-33 p-7 bg-BgCard rounded-xl flex justify-between hover:-translate-y-0.5 hover:shadow-lg transition-all duration-200">
         <div>
           <label className="text-CardText font-medium">Receitas</label>
-          <h2 className="text-3xl font-bold text-[#22c55e] mt-5">R$ 0,00</h2>
+          <h2 className="text-3xl font-bold text-[#22c55e] mt-5">R$ {receitas.toFixed(2)}</h2>
         </div>
 
         <div className="flex items-center bg-green-950 justify-center w-10 h-10 rounded-lg">
@@ -29,11 +45,11 @@ const Cards = () => {
       </div>
 
 
-      {/* Card 3 */}
+      {/* Card 3 despesas */}
       <div className="w-full h-33 p-7 bg-BgCard rounded-xl flex justify-between hover:-translate-y-0.5 hover:shadow-lg transition-all duration-200">
         <div>
           <label className="text-CardText font-medium">Despesas</label>
-          <h2 className="text-3xl font-bold text-[#ef4444] mt-5">R$ 0,00</h2>
+          <h2 className="text-3xl font-bold text-[#ef4444] mt-5">R$ {despesas.toFixed(2)}</h2>
         </div>
 
         <div className="flex items-center bg-red-950 justify-center w-10 h-10 rounded-lg">

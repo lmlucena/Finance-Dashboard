@@ -1,14 +1,18 @@
 import { useState } from "react";
 
 
-const Transactions = () => {
+const Transactions = ({ transactions, setTransactions }) => {
   const [descricao, setDescricao] = useState("");
   const [valor, setValor] = useState("");
   const [categoria, setCategoria] = useState("Salário");
   const [transactionType, setTransactionType] = useState("Receita");
-  const [transactions, setTransactions] = useState([]);
+  
 
   const adicionarTransacao = () => {
+    if (!descricao || !valor || !categoria) {
+      alert("Por favor, preencha todos os campos.");
+      return;
+    }
     const novaTransacao = {
       id: Date.now(),
       descricao,
@@ -18,7 +22,7 @@ const Transactions = () => {
     };
 
     console.log("Nova transação adicionada:", novaTransacao);
-    setTransactions([...transactions, novaTransacao]);
+    setTransactions([novaTransacao, ...transactions]);
     setDescricao("");
     setValor("");
   };
