@@ -1,16 +1,61 @@
-# React + Vite
+# 💰 Finance Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Dashboard financeiro desenvolvido com React para acompanhar receitas, despesas e saldo, oferecendo uma visão organizada das movimentações financeiras por meio de cards, tabelas e gráficos.
 
-Currently, two official plugins are available:
+## 🔗 Links
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Repositório:** https://github.com/lmlucena/Finance-Dashboard
+- **Demonstração online:** Em breve
 
-## React Compiler
+## 📄 Sobre o projeto
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+O Finance Dashboard é uma aplicação web voltada ao gerenciamento e à visualização de transações financeiras. O projeto permite registrar movimentações, acompanhar os valores de receitas e despesas e visualizar o saldo calculado a partir das transações cadastradas.
 
-## Expanding the ESLint configuration
+O foco está na organização das informações, na clareza da interface e na aplicação prática de conceitos do React e JavaScript no desenvolvimento de uma aplicação interativa.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## ✨ Funcionalidades
+
+- 💵 Cadastro de transações financeiras
+- 🗑️ Exclusão de transações cadastradas
+- 📊 Cálculo de receitas, despesas e saldo total
+- 🔎 Filtragem de despesas e movimentações
+- 📈 Visualização de dados por meio de gráficos
+- 🧾 Exibição de transações em tabelas
+- 💳 Cards com indicadores financeiros
+- 🪙 Formatação de valores monetários
+- 📭 Estado vazio quando não existem transações
+
+## 🚀 Tecnologias
+
+- [React](https://react.dev/) — construção da interface por componentes
+- [JavaScript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript) — lógica e manipulação dos dados
+- [JSX](https://react.dev/learn/writing-markup-with-jsx) — estruturação da interface
+- [CSS](https://developer.mozilla.org/pt-BR/docs/Web/CSS) — estilização da aplicação
+- React Hooks (`useState`) — gerenciamento de estado
+- `map()`, `filter()` e `reduce()` — manipulação e cálculo de dados
+
+## 🧩 Estrutura do projeto
+
+```
+Finance-Dashboard/
+├── src/
+│   ├── assets/       # Recursos visuais
+│   ├── components/   # Componentes reutilizáveis
+│   ├── containers/   # Estruturas e seções da aplicação
+│   └── ...
+├── package.json
+└── README.md
+```
+
+## 🧠 Conceitos aplicados
+
+Durante o desenvolvimento, foram aplicados conceitos importantes do desenvolvimento frontend:
+
+- Componentização e reutilização de código
+- Gerenciamento de estado com React
+- Compartilhamento de estado entre componentes
+- Manipulação de arrays e objetos
+- Operações de adição e remoção de transações
+- Cálculos derivados de dados financeiros
+- Formatação e apresentação de valores monetários
+- Atualização dinâmica da interface conforme as alterações nos dados
