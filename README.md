@@ -5,7 +5,7 @@ Dashboard financeiro desenvolvido com React para acompanhar receitas, despesas e
 ## 🔗 Links
 
 - **Repositório:** https://github.com/lmlucena/Finance-Dashboard
-- **Demonstração online:** Em breve
+- **Demonstração online:** https://finance-dashboard-lemon-nine.vercel.app/
 
 ## 📄 Sobre o projeto
 
